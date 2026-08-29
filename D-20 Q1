@@ -1,0 +1,17 @@
+Q. Write a program to find the product of odd digits of a number.
+#include <stdio.h>
+int main()
+{
+    int N,d,sum=0;
+    printf("Enter a number: ");
+    scanf("%d",&N);
+    while(N>0)
+    {
+        d=N%10;
+        if(d%2!=0)
+        sum+=d;
+        N/=10;
+    }
+    printf("Sum of odd digits: %d",sum);
+    return 0;
+}
