@@ -1,0 +1,36 @@
+Q.Write a program to print the following pattern:
+
+*
+
+*
+*
+*
+
+*
+*
+*
+*
+*
+
+*
+*
+*
+
+*
+
+#include <stdio.h>
+int main() 
+{
+    for (int i = 1; i <= 5; i++) 
+    {
+        int diff = i - 3;
+        if (diff < 0)
+            diff = -diff;
+        int count = 5 - 2 * diff;
+        for (int j = 0; j < count; j++)
+            printf("*\n");
+        if (i < 5)
+            printf("\n");
+    }
+    return 0;
+}
