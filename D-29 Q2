@@ -1,0 +1,23 @@
+Q. Find the maximum and minimum element in an array.
+
+#include <stdio.h>
+int main()
+{
+    int n,min=100000,max=-1;
+    printf("Enter the size of the array: ");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter %d numbers: ",n);
+    for(int i=0;i<n;i++)
+    scanf("%d",&arr[i]);
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i]<min)
+        min=arr[i];
+        if(arr[i]>max)
+        max=arr[i];
+    }
+    printf("The minimum number in the array is: %d\n", min);
+    printf("The maximum number in the array is: %d\n", max);
+    return 0;
+}
