@@ -1,0 +1,28 @@
+Q. Search for an element in an array using linear search.
+
+#include <stdio.h>
+int main()
+{
+    int n, se, found = 0;
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+    int arr[n];
+    printf("Enter %d numbers: ", n);
+    for (int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    printf("Enter the element to search for: ");
+    scanf("%d", &se);
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] == se)
+        {
+            found = 1;
+            break;
+        }
+    }
+    if (found)
+        printf("Element %d is present in the array.\n", se);
+    else
+        printf("Element %d is not present in the array.\n", se);
+    return 0;
+}
