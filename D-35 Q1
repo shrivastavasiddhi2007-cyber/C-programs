@@ -1,0 +1,29 @@
+Q. Find the second largest element in an array.
+
+#include <stdio.h>
+int main()
+{
+    int n,max2=0,max;
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+    int arr[n];
+    printf("Enter elements of the array: ");
+    for(int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    max=arr[0];
+    for(int j=0;j<n;j++)
+    {
+        if(max<arr[j])
+        max=arr[j];
+    }
+    for(int k=0;k<n;k++)
+    {
+        if(arr[k]<max)
+        {
+            if(max2<arr[k])
+            max2=arr[k];
+        }
+    }
+    printf("Second largest element in the array: %d",max2);
+    return 0;
+}
