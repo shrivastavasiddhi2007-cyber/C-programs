@@ -1,0 +1,33 @@
+Q.Check if a string is palindrome.
+
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char s[100],t[100];
+    int i,j,temp;
+    printf("Enter a word: ");
+    scanf("%s",s);
+    for(i=0;s[i]!='\0';i++)
+    t[i]=s[i];
+    i=0;
+    j=strlen(s)-1;
+    while(i<j)
+    {
+        temp=t[i];
+        t[i]=t[j];
+        t[j]=temp;
+        i++;
+        j--;
+    }
+    t[strlen(s)]='\0';
+    printf("Original: %s\n",s);
+    printf("Reversed: %s\n",t);
+    if(strcmp(s,t)==0)
+    {printf("Palindrome");
+    }
+    else{
+        printf("Not palindrome");
+    }
+    return 0;
+}
