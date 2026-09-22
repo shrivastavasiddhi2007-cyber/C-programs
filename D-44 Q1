@@ -1,0 +1,24 @@
+Q. Count spaces, digits, and special characters in a string.
+
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char s[100];
+    int cs=0,cd=0,csc=0;
+    printf("Enter the alphanumeric string: ");
+    fgets(s,100,stdin);
+    for(int i=0;s[i]!='\0';i++)
+    {
+        if(s[i]==' ')
+        cs++;
+        else if(s[i]>=48 && s[i]<=57)
+        cd++;
+        else if(s[i]=='@'||s[i]=='_'||s[i]=='!'||s[i]=='#'||s[i]=='&'||s[i]=='$')
+        csc++;
+    }
+    printf("Blank Space count: %d\n",cs);
+    printf("Digit count: %d\n",cd);
+    printf("Special character count: %d\n",csc);
+    return 0;
+}
