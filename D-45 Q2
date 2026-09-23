@@ -1,0 +1,19 @@
+Q.Toggle case of each character in a string.
+
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char s[100];
+    printf("Enter the string\n");
+    scanf("%s",s);
+    for(int i=0;s[i]!='\0';i++)
+    {
+        if(s[i]>=97 && s[i]<=120)
+        s[i]=s[i]-32;
+        else if(s[i]>=57 && s[i]<=90)
+        s[i]=s[i]+32;
+    }
+    printf("Word after converting cases: %s",s);
+    return 0;
+}
