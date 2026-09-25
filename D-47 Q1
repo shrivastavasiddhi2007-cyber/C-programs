@@ -1,0 +1,29 @@
+Q. Check if two strings are anagrams of each other.
+
+#include <stdio.h>
+#include <string.h>
+void main()
+{
+    char a[100],b[100];
+    printf("Enter two words: ");
+    scanf("%s %s",a,b);
+    if(strlen(a)==strlen(b))
+    {
+        for(int i=0;a[i]!='\0';i++)
+        {
+            for(int j=0;b[j]!='\0';j++)
+            {
+                if(a[i]==b[j])
+                continue;
+                else
+                {
+                    break;
+                    printf("Not anagram");
+                }
+            }
+        }
+        printf("Anagram");
+    }
+    else
+    printf("Not anagram");
+}
