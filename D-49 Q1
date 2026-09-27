@@ -1,0 +1,30 @@
+Q. Print the initials of a name.
+
+#include <stdio.h>
+int main()
+{
+    char s[100],wd[100],ch=' ';
+    int j=0;
+    printf("Enter a name: ");
+    fgets(s,100,stdin);
+    s[strlen(s)]=' ';
+    s[strlen(s)+1]='\0';
+    printf("The initials of the name are: ");
+    for(int i=0;s[i]!='\0';i++)
+    {
+        if(s[i]!=' ')
+        {
+            wd[j]=s[i];
+            j++;
+        }
+        else
+        {
+            wd[j]='\0';
+            ch=wd[0];
+            printf("%c",ch);
+            printf(".");
+            j=0;
+        }
+    }
+    return 0;
+}
