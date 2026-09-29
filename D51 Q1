@@ -1,0 +1,33 @@
+/*Write a Program to take a sorted array(say nums[]) and an integer (say target) as inputs.
+ The elements in the sorted array might be repeated. You need to print the first and last 
+ occurrence of the target and print the index of first and last occurrence. 
+ Print -1, -1 if the target is not present.*/
+
+#include <stdio.h>
+int main()
+{
+    int n,se,p1=-1,p2=-1;
+    printf("Enter the length of array: ");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter the sorted array elements: ");
+    for(int i=0;i<n;i++)
+    scanf("%d",&arr[i]);
+    printf("Enter the target element: ");
+    scanf("%d",&se);
+    for(int j=0;j<n;j++)
+    {
+        if(arr[j]==se)
+        p1=j;
+        break;
+    }
+    for(int j=n-1;j<=0;j--)
+    {
+        if(arr[j]==se)
+        p2=j;
+        break;
+    }
+    printf("Position of element:\n");
+    printf("%d %d",p1,p2);
+    return 0;
+}
