@@ -1,0 +1,40 @@
+/*Write a program to take two sorted arrays of size m and n as input.
+ Merge both the arrays such that the merged array is also sorted. 
+ Print the merged array.*/
+ 
+ #include <stdio.h>
+ int main()
+ {
+    int m,n,temp;
+    printf("Enter the lengths of the two sorted arrays: ");
+    scanf("%d %d",&m,&n);
+    int arr1[m];
+    int arr2[n];
+    int arr3[m+n];
+    printf("Enter the first sorted array: ");
+    for(int i=0;i<m;i++)
+    scanf("%d",&arr1[i]);
+    printf("Enter the second sorted array: ");
+    for(int i=0;i<n;i++)
+    scanf("%d",&arr2[i]);
+    for(int j=0;j<m;j++)
+    arr3[j]=arr1[j];
+    for(int k=m;k<m+n;k++)
+    arr3[k]=arr2[k-m];
+    for(int i=0;i<m+n;i++)
+    {
+      for(int j=0;j<m+n-i-1;j++)
+      {
+         if(arr3[j]>arr3[j+1])
+         {
+            temp=arr3[j+1];
+            arr3[j+1]=arr3[j];
+            arr3[j]=temp;
+         }
+      }
+    }
+    printf("Sorted merged array: ");
+    for(int i=0;i<m+n;i++)
+    printf("%d ",arr3[i]);
+    return 0;
+ }
