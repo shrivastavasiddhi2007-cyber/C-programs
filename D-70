@@ -1,0 +1,36 @@
+Q. Write a program to take a string input. Change it to sentence case.
+
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    FILE *fp;
+    char str[1000], ch;
+    int i = 0, start = 1;
+
+    fgets(str, sizeof(str), stdin);
+
+    fp = fopen("text.txt", "w");
+    fputs(str, fp);
+    fclose(fp);
+
+    fp = fopen("text.txt", "r");
+
+    while((ch = fgetc(fp)) != EOF) {
+        if(start == 1 && isalpha(ch)) {
+            printf("%c", toupper(ch));
+            start = 0;
+        }
+        else {
+            printf("%c", tolower(ch));
+        }
+
+        if(ch == '.' || ch == '?' || ch == '!') {
+            start = 1;
+        }
+    }
+
+    fclose(fp);
+
+    return 0;
+}
